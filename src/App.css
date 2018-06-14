@@ -1,0 +1,144 @@
+.App {
+  /*text-align: center;*/
+}
+
+.main {
+  background-color: white;
+}
+
+.App-header, .summary, .individual-return, .smallprint {
+  padding: 10px;
+}
+
+.people, .card {
+  padding: 5px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  min-height: 150px;
+  color: white;
+}
+
+.summary {
+  background-color: #222;
+  color: white;
+  padding-top: 20px;
+  position: relative;
+}
+
+.App-header, .summary {
+  background-color: #4dab84;
+  background-color: #93d2b8;
+}
+
+.people {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.individual-return {
+  color: white;
+  color: darkcyan;
+  background-color: rgba(193, 230, 255, 0.4);
+  background-color: #f9f7f6;
+  position: relative;
+  flex: 1 1;
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+.summary:after, .individual-return:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: aqua;
+  background-color: #05fd95;
+  background-color: #02af6b;
+}
+
+.higher-rate:after {
+  background-color: yellow;
+}
+
+.additional-rate:after {
+  background-color: red;
+}
+
+.message {
+  color: aqua;
+  color: #05fd95;
+  color: #02af6b;
+}
+
+.higher-rate-message {
+  color: yellow;
+}
+
+.additional-rate-message {
+  color: red;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.smallprint {
+  /*background-color: #444;*/
+  color: #999;
+}
+
+/*@media (min-width: 400px) {*/
+
+  .App-header, .summary, .card, .individual-return, .smallprint {
+    padding: 20px;
+  }
+
+  .people, .card {
+    padding: 10px;
+  }
+
+  .App-header, .summary, .individual-return {
+    padding-top: 30px;
+  }
+
+/*}*/
+
+@media (min-width: 600px) {
+
+  .App-header, .summary, .card, .individual-return, .smallprint {
+    padding: 40px;
+  }
+
+  .people, .card {
+    padding: 20px;
+  }
+
+  .App-header, .summary, .individual-return {
+    padding-top: 40px;
+  }
+
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
