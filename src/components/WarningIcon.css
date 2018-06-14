@@ -1,0 +1,18 @@
+
+.warning-icon {
+    display: block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    font-family: monospace;
+    color: black;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 50%;
+}

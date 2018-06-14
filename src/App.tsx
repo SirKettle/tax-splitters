@@ -4,6 +4,7 @@ import './App.css';
 
 import NumberInput from './components/NumberInput';
 import Person, {IPersonData} from "./components/Person";
+import WarningIcon from "./components/WarningIcon";
 // import logo from './logo.svg';
 import { ITaxReturn, ITaxYearConfig, ITaxYearConfigs, TAX_RATE_TYPE, TAX_YEARS } from './types';
 import {calculateTax, currencyFormat, getTaxReturnSum} from "./utils/number";
@@ -96,14 +97,13 @@ class App extends React.Component<{}, IState> {
                     <header className="App-header">
                         <h1>Tax splitter!</h1>
                         <h2>Your estimated Self Assessment tax return figures...</h2>
-                        <p>
-                            1) Select the tax year: { this.renderSelectTaxYear() }
+                        <p>1) Select the tax year: { this.renderSelectTaxYear() }
                         </p>
                         <p>
                             2) Annual dividends: £ <NumberInput val={this.state.totalDividends} onChange={this.onHandleTotalDividendsChange} step={100} />
                         </p>
                         <p>
-                            3) Are you Income splitting with your partner?: <input type="checkbox" checked={this.state.isMultiShareholders} onChange={this.onHandleIsIncomeSplittingChange} />
+                            3) Income splitting?: <input type="checkbox" checked={this.state.isMultiShareholders} onChange={this.onHandleIsIncomeSplittingChange} />
                         </p>
                         { this.renderIncomeSplit() }
                     </header>
@@ -120,6 +120,10 @@ class App extends React.Component<{}, IState> {
                         <p>NET income: {currencyFormat(totals.income - totals.taxPayable)}</p>
                         <h3>Tax payable: {currencyFormat(totals.taxPayable)}</h3>
                         { this.renderTaxMessage(isHigherRate, isAdditionalRate) }
+                        <WarningIcon
+                            color={isAdditionalRate ? 'red' : 'yellow'}
+                            hide={!isHigherRate && !isAdditionalRate}
+                        />
                     </div>
                 </div>
                 <section className="smallprint">
